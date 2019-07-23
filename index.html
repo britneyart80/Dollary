@@ -12,7 +12,39 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>MakesCents</h1>
+      <h1>Budget App</h1>
 
+      <p id="auth-message"> hi login to start your budgeting journey</p>
+
+      <!-- Sign-in -->
+      <form id="sign-in">
+        <div class="inputs">
+        <input type="email" placeholder="Email" name="credentials[email]">
+        <input type="password" placeholder="Password" name="credentials[password]">
+        </div>
+        <button type="button" class="auth btn btn-primary">Sign in</button>
+      </form>
+
+      <!-- Sign-up -->
+      <form id="sign-up">
+        <div class="inputs">
+          <input type="email" placeholder="Email" name="credentials[email]">
+          <input type="password" placeholder="Password" name="credentials[password]">
+          <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+        </div>
+        <button type="button" class="auth btn btn-primary">Sign Up!</button>
+      </form>
+
+      <!-- Change Password -->
+      <form id='change-password'>
+        <input type="password" placeholder="Old Password" name="passwords[old]">
+        <input type="password" placeholder="New Password" name="passwords[new]">
+        <button type="button" class="auth btn btn-primary">
+        Change Password
+        </button>
+      </form>
+
+      <!-- Sign-out -->
+      <button id="sign-out" type="button" class='btn btn-primary'>Sign Out</button>
     </body>
 </html>
