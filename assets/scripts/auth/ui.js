@@ -13,8 +13,9 @@ const failedSignUp = () => {
 }
 
 const successfulSignIn = response => {
+  store.user = response.user
   $('form').trigger('reset')
-  $('#auth-message').text('Sign in successful!').css('color', 'green')
+  $('#auth-message').text(`Welcome ${response.user.email}`).css('color', 'green')
 }
 
 const failedSignIn = () => {
