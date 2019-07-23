@@ -1,0 +1,23 @@
+<h1> {{convert envelope.month}}, {{envelope.year}} </h1>
+
+{{>add-spending}}
+<button type="button" class="edit-envelope btn btn-primary" data-toggle="modal" data-target="#edit-envelope-modal">
+                Edit Envelope
+              </button>
+
+<h2> Your Spendings:</h2>
+
+{{#each envelope.spendings as |spending|}}
+  {{log envelope}}
+  <section class="spending" data-id="{{spending.id}}">
+  <h6>Item Bought:</h6>
+  <h3>
+    {{spending.item}}
+  </h2>
+  <h6>Cost:</h6>
+  <p>
+    {{spending.cost}}
+  </p>
+  </section>
+
+{{/each}}

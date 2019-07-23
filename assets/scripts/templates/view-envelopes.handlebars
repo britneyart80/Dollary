@@ -1,0 +1,16 @@
+
+{{#each envelopes as |envelope|}}
+  {{log envelope}}
+  <section class="envelope" data-id="{{envelope.id}}">
+    <h6>
+      {{convert envelope.month}} ,
+      {{#if envelope.year}}
+      {{envelope.year}}
+      {{else}}
+      No year provided
+      {{/if}}
+    </h6>
+      {{> partial envelope}}
+  </section>
+
+{{/each}}

@@ -34,15 +34,56 @@
         </div>
         <button>Sign in</button>
       </form>
-
       <!-- Change Password -->
       <form id='change-password'>
         <input type="password" placeholder="Old Password" name="passwords[old]">
         <input type="password" placeholder="New Password" name="passwords[new]">
-        <button> Change Password </button>
+        <button>Change Password</button>
       </form>
 
       <!-- Sign-out -->
       <button id="sign-out">Sign Out</button>
+
+      <!-- Envelopes -->
+      <form id="create-envelope">
+        <div class="inputs">
+          <p> Month: </p>
+          <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
+          <p> Year: </p>
+          <input type=number placeholder="year" min=1950 name="envelope[year]">
+          <p> Your budget: </p>
+          <input type=number placeholder="budget" min=0 name="envelope[budget]">
+        </div>
+        <button>Create Envelope</button>
+      </form>
+
+      <p class="status"></p>
+      <button id="view-envelopes">View All Envelopes</button>
+      <button id="clear-envelopes"> Clear Envelopes</button>
+      <div id="content"> </div>
+
+      <div class="modal fade" id="edit-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="editEnvelopeModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editEnvelopeModalCenterTitle">Edit envelope</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="edit-envelope">
+                      <div class="inputs">
+                        <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
+                        <input type=number placeholder="year" min=1950 name="envelope[year]">
+                        <input type=number placeholder="budget" min=0 name="envelope[budget]">
+                      </div>
+                      <p class="edit-envelope-status" style="color:red"></p>
+                      <button>Make Changes</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
     </body>
 </html>
