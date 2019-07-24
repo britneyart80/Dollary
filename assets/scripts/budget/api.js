@@ -32,6 +32,9 @@ const viewEnvelopes = () => {
 
 const deleteEnvelope = id => {
   return $.ajax({
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     url: config.apiUrl + `/envelopes/${id}`,
     method: 'DELETE'
   })
@@ -40,6 +43,9 @@ const deleteEnvelope = id => {
 const getEnvelope = id => {
   store.envelope_id = id
   return $.ajax({
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     url: config.apiUrl + `/envelopes/${id}`
   })
 }

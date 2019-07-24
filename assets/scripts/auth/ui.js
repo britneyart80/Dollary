@@ -23,7 +23,7 @@ const successfulSignIn = response => {
   const signedInHtml = signedInTemplate()
   $('.authentication').html(signedInHtml)
   $('.create-envelope').removeClass('invisible')
-  $('.options').html('<p class="status"></p> <button id="view-envelopes">View All Envelopes</button>')
+  $('#options').html('<p class="status"></p> <button id="view-envelopes">View All Envelopes</button>')
 }
 
 const failedSignIn = () => {
@@ -34,10 +34,12 @@ const failedSignIn = () => {
 const successfulSignOut = () => {
   $('form').trigger('reset')
   $('.modal-backdrop').hide()
-  $('.content').empty()
+  $('#content').empty()
+  $('#options').empty()
   $('#auth-message').text('Sign out successful!').css('color', 'green')
   const signedOutHtml = signedOutTemplate()
   $('.authentication').html(signedOutHtml)
+  $('.create-envelope').addClass('invisible')
 }
 
 const failedSignOut = () => {
