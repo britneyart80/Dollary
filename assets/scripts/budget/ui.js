@@ -32,6 +32,7 @@ const openEnvelope = (response) => {
 
 const createEnvelopesSuccess = () => {
   $('#create-envelope-modal').modal('hide')
+  $('.modal-backdrop').hide()
 }
 
 module.exports = {

@@ -27,17 +27,38 @@
 
 <!-- Modal for changing password-->
 <div class="modal fade" id="sign-out-modal" tabindex="-1" role="dialog" aria-labelledby="signOutModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="signOutModalCenterTitle">Sign Out</h5>
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <h5> Great job budgeting! See you soon. </h5>
-              <button id="sign-out">Sign Out</button>
-            </div>
-          </div>
-        </div>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signOutModalCenterTitle">Sign Out</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
+      <div class="modal-body">
+        <h5> Great job budgeting! See you soon. </h5>
+        <button id="sign-out">Sign Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- How to Use -->
+<button type="button" class="instructions" data-toggle="modal" data-target="#instructions">Sign Out</button>
+
+<!-- Modal for changing password-->
+<div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="InstructionsModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="InstructionsModalCenterTitle">How to Use</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5> Thank you for using <strong> Dollary! </strong> </h5>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+$title-color: #92AE5A;
+
+.dollary{
+  font-family: 'Paytone One', sans-serif;
+  font-weight: 100;
+  display: block;
+  font-size: 5rem;
+
+  span{
+    color: #FFFFFF;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    animation: blink 2.5s infinite;
+  }
+
+  @keyframes blink {
+        0% {text-shadow: 1px 1px 5px $title-color;}
+        40%{text-shadow: 0 0 25px $title-color, 1px 1px 25px $title-color, 2px 2px 25px $title-color, -1px -1px 25px $title-color, -2px -2px 20px $title-color;}
+  }
+}

@@ -36,8 +36,8 @@
 
 <h2> Your Spendings:</h2>
 
+<div class="spendings">
 {{#each envelope.spendings as |spending|}}
-  {{log envelope}}
   <section class="spending" data-id="{{spending.id}}">
     <h6>Item Bought: {{spending.item}}</h6>
     <h6>Cost: {{spending.cost}}</h6>
@@ -48,5 +48,6 @@
     {{/if}}
   <button class="btn btn-danger delete-spending" data-id="{{spending.id}}">Delete Spending</button>
   </section>
+</div>
 
 {{/each}}

@@ -1,8 +1,77 @@
 @import '~bootstrap/scss/bootstrap';
+@import 'animations.scss';
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Paytone+One&display=swap');
 
-$body-bg: url('images/main-bg');
+$montserrat: 'Montserrat', sans-serif;
+$button-color: #FFFFE0;
+$modal-color: #922B63;
+
+html {
+  height: 100%;
+  margin: auto;
+  overflow: scroll;
+}
 
 body {
-  background: $body-bg;
+  color: #FFFFFF;
+  font-family: $montserrat;
+  background-image: url('https://i.imgur.com/hLaEdez.jpg');
+  padding-right: 0 !important;
+  margin: 0;
 
+  #auth-message {
+    margin-top: 2.6rem;
+    padding: 1.5rem;
+    display: block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, .2)
+  }
+
+  .modal {
+    color: $modal-color;
+    font-family: $montserrat;
+    h5 {
+      margin: 2rem;
+    }
+    .modal-title {
+      font-size: 2rem;
+      margin: 1rem;
+    }
+    form {
+      input {
+        margin: .5rem;
+      }
+      button {
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+header {
+  text-align: center;
+  h1 {
+    font-size: 5rem;
+    margin: 3rem;
+    margin-bottom: 0;
+  }
+  h4 {
+    margin: 2rem;
+    font-weight: bold;
+  }
+  button {
+    background-color: $button-color;
+    font-family: $montserrat;
+    margin: 0 1.5rem;
+    line-height: 34px;
+    padding: 0 2rem;
+    border-color: $title-color;
+    border-radius: 15px;
+    transition-duration: .2s;
+    &:hover {
+      background-color: $title-color;
+    }
+    &:active {
+    }
+  }
 }
