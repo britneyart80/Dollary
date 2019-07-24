@@ -1,11 +1,17 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const store = require('./../store.js')
 
-const onClearEnvelopes = () => {
-  console.log('got here')
+const onGetCategories = () => {
+  api.getCategories()
+    .then(ui.getCategoriesSuccess)
+    .catch(ui.failure)
+}
+
+const onClearEnvelopes = (event) => {
   event.preventDefault()
-  $('#content').empty()
+  onViewEnvelopes()
 }
 
 const onCreateEnvelope = event => {
@@ -13,6 +19,10 @@ const onCreateEnvelope = event => {
   const formData = getFormFields(event.target)
   api.createEnvelope(formData)
     .then(ui.createEnvelopesSuccess)
+    .then(function () {
+      api.viewEnvelopes()
+        .then(ui.viewEnvelopesSuccess)
+    })
     .catch(ui.failure)
 }
 
@@ -32,6 +42,7 @@ const onDeleteEnvelope = event => {
 }
 
 const onOpenEnvelope = event => {
+  store.envelope = event
   event.preventDefault()
   api.getEnvelope(event.target.dataset.id)
     .then(ui.openEnvelope)
@@ -41,9 +52,34 @@ const onOpenEnvelope = event => {
 const onEditEnvelope = event => {
   event.preventDefault()
   const formData = getFormFields(event.target)
-  console.log(formData)
+  $('form').trigger('reset')
+  $('#edit-envelope-modal').modal('hide')
   api.updateEnvelope(formData)
-    .then(console.log)
+    .then(ui.openEnvelope)
+    .catch(ui.failure)
+}
+
+const onAddSpending = event => {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.addSpending(formData)
+    .then(function () {
+      $('.modal-backdrop').hide()
+      api.getEnvelope(store.envelope_id)
+        .then(ui.openEnvelope)
+        .catch(ui.failure)
+    })
+    .catch(ui.failure)
+}
+
+const onDeleteSpending = event => {
+  event.preventDefault()
+  api.deleteSpending(event.target.dataset.id)
+    .then(function () {
+      api.getEnvelope(store.envelope_id)
+        .then(ui.openEnvelope)
+        .catch(ui.failure)
+    })
 }
 
 module.exports = {
@@ -52,5 +88,8 @@ module.exports = {
   onClearEnvelopes,
   onDeleteEnvelope,
   onOpenEnvelope,
-  onEditEnvelope
+  onEditEnvelope,
+  onAddSpending,
+  onGetCategories,
+  onDeleteSpending
 }

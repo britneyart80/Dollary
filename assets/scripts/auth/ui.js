@@ -1,9 +1,12 @@
 'use strict'
 
 const store = require('./../store')
+const signedInTemplate = require('../templates/signed-in.handlebars')
+const signedOutTemplate = require('../templates/signed-out.handlebars')
 
 const successfulSignUp = response => {
   $('form').trigger('reset')
+  $('#sign-up-modal').modal('hide')
   $('#auth-message').text('Sign up successful!').css('color', 'green')
 }
 
@@ -14,8 +17,13 @@ const failedSignUp = () => {
 
 const successfulSignIn = response => {
   store.user = response.user
+  $('.modal-backdrop').hide()
   $('form').trigger('reset')
   $('#auth-message').text(`Welcome ${response.user.email}`).css('color', 'green')
+  const signedInHtml = signedInTemplate()
+  $('.authentication').html(signedInHtml)
+  $('.create-envelope').removeClass('invisible')
+  $('.options').html('<p class="status"></p> <button id="view-envelopes">View All Envelopes</button>')
 }
 
 const failedSignIn = () => {
@@ -25,7 +33,11 @@ const failedSignIn = () => {
 
 const successfulSignOut = () => {
   $('form').trigger('reset')
+  $('.modal-backdrop').hide()
+  $('.content').empty()
   $('#auth-message').text('Sign out successful!').css('color', 'green')
+  const signedOutHtml = signedOutTemplate()
+  $('.authentication').html(signedOutHtml)
 }
 
 const failedSignOut = () => {

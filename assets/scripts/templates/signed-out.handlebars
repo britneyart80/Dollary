@@ -1,0 +1,53 @@
+
+<!-- Sign-up -->
+<button type="button" class="sign-up" data-toggle="modal" data-target="#sign-up-modal"> Sign Up </button>
+
+<!-- Modal for signing up -->
+<div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signUpModalCenterTitle">Sign Up</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <div class="inputs">
+                  <input type="email" placeholder="Email" name="credentials[email]">
+                  <input type="password" placeholder="Password" name="credentials[password]">
+                  <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+                </div>
+                <button>Sign Up!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Sign-in -->
+<button type="button" class="sign-in" data-toggle="modal" data-target="#sign-in-modal"> Sign In </button>
+
+<!-- Modal for signing in -->
+<div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="signInModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signInModalCenterTitle">Sign In</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="sign-in">
+          <div class="inputs">
+          <input type="email" placeholder="Email" name="credentials[email]">
+          <input type="password" placeholder="Password" name="credentials[password]">
+          </div>
+          <button>Sign in</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
