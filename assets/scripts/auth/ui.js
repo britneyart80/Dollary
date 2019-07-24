@@ -19,10 +19,9 @@ const successfulSignIn = response => {
   store.user = response.user
   $('.modal-backdrop').hide()
   $('form').trigger('reset')
-  $('#auth-message').text(`Welcome ${response.user.email}`)
+  $('#auth-message').text(`Welcome ${response.user.email}!`)
   const signedInHtml = signedInTemplate()
   $('.authentication').html(signedInHtml)
-  $('#options').html('<p class="status"></p> <button id="view-envelopes">View All Envelopes</button>')
 }
 
 const failedSignIn = () => {

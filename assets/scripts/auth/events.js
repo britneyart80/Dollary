@@ -1,6 +1,8 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields.js')
+const budgetAPI = require('./../budget/api.js')
+const budgetUI = require('./../budget/ui.js')
 
 const onSignUp = event => {
   event.preventDefault()
@@ -15,6 +17,8 @@ const onSignIn = event => {
   const formData = getFormFields(event.target)
   api.signIn(formData)
     .then(ui.successfulSignIn)
+    .then(budgetAPI.viewEnvelopes)
+    .then(budgetUI.viewEnvelopesSuccess)
     .catch(ui.failedSignIn)
 }
 

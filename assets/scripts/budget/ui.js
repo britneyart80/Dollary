@@ -7,6 +7,9 @@ const store = require('./../store.js')
 const viewEnvelopesSuccess = response => {
   const viewEnvelopesHtml = viewEnvelopesTemplate({ envelopes: response.envelopes })
   $('#content').html(viewEnvelopesHtml)
+  if (response.envelopes.length < 1) {
+    $('#content').append('<h4> You have no Envelopes! Create one to start budgeting. </h4>')
+  }
 }
 
 const failure = () => {

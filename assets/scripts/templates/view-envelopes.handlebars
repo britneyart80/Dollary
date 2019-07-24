@@ -1,6 +1,7 @@
 <!-- Creating an envelope -->
+<div id='create-envelope-div'>
 <button type="button" class="create-envelope" data-toggle="modal" data-target="#create-envelope-modal"> Create Envelope </button>
-
+</div>
 <!-- Modal for creating an envelope -->
 <div class="modal fade" id="create-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="createEnvelopeModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -22,12 +23,14 @@
             <input type=number placeholder="budget" min=0 name="envelope[budget]">
           </div>
           <br>
-          <button>Create Envelope</button>
+          <button class='modal-button'>Create Envelope</button>
         </form>
       </div>
     </div>
   </div>
 </div>
+
+<div id="envelopes">
 
 {{#each envelopes as |envelope|}}
   {{log envelope}}
@@ -40,8 +43,8 @@
       No year provided
       {{/if}}
     </h6>
-  </br>
   <button class="btn btn-danger delete-envelope" data-id="{{id}}">Delete Envelope</button>
   </section>
-
 {{/each}}
+
+</div>

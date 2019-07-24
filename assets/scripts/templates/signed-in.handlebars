@@ -15,7 +15,7 @@
               <form id='change-password'>
                 <input type="password" placeholder="Old Password" name="passwords[old]">
                 <input type="password" placeholder="New Password" name="passwords[new]">
-                <button>Change Password</button>
+                <button class='modal-button'>Change Password</button>
               </form>
             </div>
           </div>
@@ -37,14 +37,15 @@
       </div>
       <div class="modal-body">
         <h5> Great job budgeting! See you soon. </h5>
-        <button id="sign-out">Sign Out</button>
+        <button id="sign-out" class='modal-button'>Sign Out</button>
       </div>
     </div>
   </div>
 </div>
-
+<br>
+<br>
 <!-- How to Use -->
-<button type="button" class="instructions" data-toggle="modal" data-target="#instructions">Sign Out</button>
+<button type="button" class="instructions" data-toggle="modal" data-target="#instructions">How to Use</button>
 
 <!-- Modal for changing password-->
 <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="InstructionsModalCenterTitle" aria-hidden="true">
@@ -57,7 +58,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <h5> Thank you for using <strong> Dollary! </strong> </h5>
+        <h5> Thank you for using <strong> Dollary! </strong> <br><br>
+          Envelopes are where you keep your spending logs each month. <br> Create the envelope with the current month, year and your budget, then you're free to open it and add your spendings! <br> <br>
+          Spendings can be added in each envelope and the money left in your budget will be calculated for you. <br> <br>
+
+          Happy budgeting!
+        </h5>
       </div>
     </div>
   </div>
