@@ -28,6 +28,7 @@ const successfulSignIn = response => {
 
 const failedSignIn = () => {
   $('form').trigger('reset')
+  $('#sign-in-modal').modal('hide')
   $('#auth-message').text('Sign in failed!').css('color', 'red')
 }
 
@@ -49,11 +50,13 @@ const failedSignOut = () => {
 
 const successfulPasswordChange = () => {
   $('form').trigger('reset')
+  $('#change-password-modal').modal('hide')
   $('#auth-message').text('Password changed!').css('color', 'green')
 }
 
 const failedPasswordChange = () => {
   $('form').trigger('reset')
+  $('#change-password-modal').modal('hide')
   $('#auth-message').text('Failed to change password!').css('color', 'red')
 }
 

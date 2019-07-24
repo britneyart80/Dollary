@@ -1,3 +1,33 @@
+<!-- Creating an envelope -->
+<button type="button" class="create-envelope" data-toggle="modal" data-target="#create-envelope-modal"> Create Envelope </button>
+
+<!-- Modal for creating an envelope -->
+<div class="modal fade" id="create-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="createEnvelopeModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="createEnvelopeModalCenterTitle">Create a New Envelope</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="create-envelope">
+          <div class="inputs">
+            <p> Month: </p>
+            <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
+            <p> Year: </p>
+            <input type=number placeholder="year" min=1950 name="envelope[year]">
+            <p> Your budget: </p>
+            <input type=number placeholder="budget" min=0 name="envelope[budget]">
+          </div>
+          <br>
+          <button>Create Envelope</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 {{#each envelopes as |envelope|}}
   {{log envelope}}

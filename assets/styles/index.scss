@@ -1,1 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+
+$body-bg: url('images/main-bg');
+
+body {
+  background: $body-bg;
+
+}

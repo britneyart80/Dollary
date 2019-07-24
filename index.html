@@ -11,10 +11,9 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body>
+    <header>
       <h1>Budget App</h1>
 
-      <p id="auth-message"> hi login to start your budgeting journey</p>
       <div class="authentication">
 
         <!-- Sign-up -->
@@ -22,88 +21,58 @@
 
         <!-- Modal for signing up -->
         <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="signUpModalCenterTitle">Sign Up</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="sign-up">
-                        <div class="inputs">
-                          <input type="email" placeholder="Email" name="credentials[email]">
-                          <input type="password" placeholder="Password" name="credentials[password]">
-                          <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
-                        </div>
-                        <button>Sign Up!</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalCenterTitle">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
+              <div class="modal-body">
+                <form id="sign-up">
+                  <div class="inputs">
+                    <input type="email" placeholder="Email" name="credentials[email]">
+                    <input type="password" placeholder="Password" name="credentials[password]">
+                    <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+                  </div>
+                  <button>Sign Up!</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- Sign-in -->
         <button type="button" class="sign-in" data-toggle="modal" data-target="#sign-in-modal"> Sign In </button>
 
         <!-- Modal for signing in -->
         <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="signInModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="signInModalCenterTitle">Sign In</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <form id="sign-in">
-                        <div class="inputs">
-                        <input type="email" placeholder="Email" name="credentials[email]">
-                        <input type="password" placeholder="Password" name="credentials[password]">
-                        </div>
-                        <button>Sign in</button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signInModalCenterTitle">Sign In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
               </div>
-      </div>
-
-      <!-- Envelopes -->
-
-      <!-- Creating an envelope -->
-      <button type="button" class="create-envelope invisible" data-toggle="modal" data-target="#create-envelope-modal"> Create Envelope </button>
-
-      <!-- Modal for creating an envelope -->
-      <div class="modal fade" id="create-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="createEnvelopeModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="createEnvelopeModalCenterTitle">Create a New Envelope</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form id="create-envelope">
-                <div class="inputs">
-                  <p> Month: </p>
-                  <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
-                  <p> Year: </p>
-                  <input type=number placeholder="year" min=1950 name="envelope[year]">
-                  <p> Your budget: </p>
-                  <input type=number placeholder="budget" min=0 name="envelope[budget]">
-                </div>
-                <br>
-                <button>Create Envelope</button>
-              </form>
+              <div class="modal-body">
+                <form id="sign-in">
+                  <div class="inputs">
+                    <input type="email" placeholder="Email" name="credentials[email]">
+                    <input type="password" placeholder="Password" name="credentials[password]">
+                  </div>
+                  <button>Sign in</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </header>
 
+    <body>
+      <p id="auth-message"> hi login to start your budgeting journey</p>
       <div id="options"></div>
 
       <div id="content"> </div>
