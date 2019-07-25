@@ -33,15 +33,15 @@ If I were to further this project, I would love to give users the option to add 
 
 ## Wireframes and User Stories
 
-As a user, I can sign in to my existing account or create a new one.
-As a user logged in, I can change my password.
-As a user logged in, I can open instructions to understand how the app is used.
-As a user logged in, I can log out
-As a user I can add an envelope
-As a user I can edit/delete my envelope
-As a user I can add/delete a spending
-As a user I can see how much of my budget I have left
-As a user I can select a category for my spending.
+- As a user, I can sign in to my existing account or create a new one.
+- As a user logged in, I can change my password.
+- As a user logged in, I can open instructions to understand how the app is used.
+- As a user logged in, I can log out
+- As a user I can add an envelope
+- As a user I can edit/delete my envelope
+- As a user I can add/delete a spending
+- As a user I can see how much of my budget I have left
+- As a user I can select a category for my spending.
 
 <p align="center">
 <img src="https://i.imgur.com/VS5Sg4G.jpg" alt="Wireframe Image" height="500">
