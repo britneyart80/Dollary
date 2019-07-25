@@ -18,6 +18,7 @@ const failedSignUp = () => {
 
 const successfulSignIn = response => {
   store.user = response.user
+  $('#dollary-title').removeClass('animated')
   $('.modal-backdrop').hide()
   $('form').trigger('reset')
   $('#auth-message').text(`Welcome ${response.user.email}!`)
@@ -32,9 +33,10 @@ const failedSignIn = () => {
 }
 
 const successfulSignOut = () => {
+  $('#dollary-title').addClass('animated')
   $('form').trigger('reset')
   $('.modal-backdrop').hide()
-  $('#content').empty()
+  $('#content').html('<img src="https://media.giphy.com/media/6UUZX9qPA3m7K/giphy.gif">')
   $('#options').empty()
   $('#auth-message').text('Sign out successful! ')
   const signedOutHtml = signedOutTemplate()
