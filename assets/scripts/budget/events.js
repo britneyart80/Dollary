@@ -54,6 +54,7 @@ const onEditEnvelope = event => {
   const formData = getFormFields(event.target)
   $('form').trigger('reset')
   $('#edit-envelope-modal').modal('hide')
+  $('.modal-backdrop').hide()
   api.updateEnvelope(formData)
     .then(ui.openEnvelope)
     .catch(ui.failure)

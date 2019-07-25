@@ -1,51 +1,66 @@
-<h2> {{convert envelope.month}}, {{envelope.year}} </h2>
-<h2> Your budget: <strong>${{envelope.budget}}</strong> </h2>
-<h2> You have <strong>${{envelope.budget_left}}</strong> left! </h2>
+<div class="envelope-header">
+  <h2> {{convert envelope.month}}, {{envelope.year}} </h2>
+  <h2> Your budget: <strong>${{envelope.budget}}</strong> </h2>
+  <h2> You have <strong>${{envelope.budget_left}}</strong> left! </h2>
+</div>
 
-<button type="button" class="edit-envelope btn btn-primary" data-toggle="modal" data-target="#edit-envelope-modal">
-  Edit Envelope
-</button>
+<div class="envelope-buttons">
+  <button type="button" class="edit-envelope" data-toggle="modal" data-target="#edit-envelope-modal">
+    Edit Envelope
+  </button>
 
-<!-- Modal for editing envelope -->
-<div class="modal fade" id="edit-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="editEnvelopeModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editEnvelopeModalCenterTitle">Edit envelope</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="edit-envelope">
-          <div class="inputs">
-            <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
-            <input type=number placeholder="year" min=1950 name="envelope[year]">
-            <input type=number placeholder="budget" min=0 name="envelope[budget]">
-          </div>
-          <p class="edit-envelope-status" style="color:red"></p>
-          <button>Make Changes</button>
-        </form>
+  <button type="button" class="add-spending" data-toggle="modal" data-target="#add-spending-modal"> Add Spending </button>
+
+  <!-- Modal for editing envelope -->
+  <div class="modal fade" id="edit-envelope-modal" tabindex="-1" role="dialog" aria-labelledby="editEnvelopeModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editEnvelopeModalCenterTitle">Edit envelope</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p> Please fill in all information. </p>
+          <form id="edit-envelope">
+            <div class="inputs">
+              <input type=number placeholder="month" min=1 max=12 name="envelope[month]">
+              <input type=number placeholder="year" min=1950 name="envelope[year]">
+              <input type=number placeholder="budget" min=0 name="envelope[budget]">
+            </div>
+            <button>Make Changes</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
+  </body>
+
+  <button id="clear-envelopes">Close Envelope</button>
+
+  <!-- Creating a spending -->
 </div>
-</body>
 
- <button id="clear-envelopes">Close Envelope</button>
 
-<h2> Your Spendings:</h2>
 
-{{#each envelope.spendings as |spending|}}
-  <section class="spending" data-id="{{spending.id}}">
-    <h6>Item Bought: {{spending.item}}</h6>
-    <h6>Cost: {{spending.cost}}</h6>
-    {{#if spending.date}}
-      <h6>Date of Purchase: {{spending.date}}</h6>
-    {{else}}
-      <p> No date available </p>
-    {{/if}}
-  <button class="btn btn-danger delete-spending" data-id="{{spending.id}}">Delete Spending</button>
-  </section>
+<div class="spending-log">
+  <h2> Your Spendings:</h2>
 
-{{/each}}
+  {{#each envelope.spendings as |spending|}}
+    <section class="spending" data-id="{{spending.id}}">
+      <div class="spending-info">
+        <h6>Item Bought: {{spending.item}}</h6>
+        <h6>Cost: ${{spending.cost}}</h6>
+        {{#if spending.date}}
+          <h6>Date of Purchase: {{spending.date}}</h6>
+        {{else}}
+          <p> No date available </p>
+        {{/if}}
+      </div>
+      <div id="spending-button">
+        <button class="btn btn-danger delete-spending" data-id="{{spending.id}}">Delete Spending</button>
+      </div>
+    </section>
+  {{/each}}
+</div>

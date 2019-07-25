@@ -19,3 +19,9 @@ $title-color: #92AE5A;
         40%{text-shadow: 0 0 25px $title-color, 1px 1px 25px $title-color, 2px 2px 25px $title-color, -1px -1px 25px $title-color, -2px -2px 20px $title-color;}
   }
 }
+
+@keyframes purplePulse {
+  from { background-color: #8B008B; -webkit-box-shadow: 0 0 9px	#DDA0DD }
+  50% { background-color:	#b100b1; -webkit-box-shadow: 0 0 18px	#E6E6FA }
+  to { background-color: 	#8B008B; -webkit-box-shadow: 0 0 9px	#DDA0DD }
+}

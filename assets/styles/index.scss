@@ -12,6 +12,11 @@ html {
   overflow: scroll;
 }
 
+h4, h3 {
+  margin: 1rem;
+  text-align: center;
+}
+
 body {
   color: #FFFFFF;
   font-family: $montserrat;
@@ -58,9 +63,11 @@ body {
       background-color: $title-color;
     }
   }
+
   #create-envelope-div {
     text-align: center;
     button {
+      margin: 1rem;
       padding: .5rem;
       border-radius: 15px;
       background-color: $button-color;
@@ -71,10 +78,37 @@ body {
     }
   }
 
+  #create-envelope-modal,
+   #edit-envelope-modal,
+   #add-spending-modal {
+    text-align: center;
+    p {
+      margin: 0;
+    }
+    input {
+      width: 50%;
+    }
+    button {
+      padding: .5rem;
+      border-radius: 15px;
+      background-color: $button-color;
+      &:hover {
+        transition-duration: .2s;
+        background-color: $title-color;
+      }
+    }
+    select {
+      margin: .5rem;
+      margin-bottom: 1rem;
+    }
+  }
+
   #envelopes {
     display: flex;
     flex-wrap: wrap;
     .envelope {
+      text-align: center;
+      cursor: pointer;
       margin: 1.5rem;
       color: white;
       font-family: $montserrat;
@@ -92,8 +126,66 @@ body {
         font-size: 1.5rem;
         font-weight: bold;
       }
+      button.delete-envelope {
+        font-size: .75rem;
+        padding: .5rem;
+      }
     }
   }
+}
+
+.envelope-buttons {
+  text-align: center;
+  button.edit-envelope,
+  .add-spending,
+  #clear-envelopes {
+    margin: 1.5rem;
+    padding: .75rem;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, .5);
+    background-color: #8B008B;
+    &:hover {
+      animation: purplePulse 3s infinite;
+    }
+  }
+}
+
+.spending-log {
+  h2 {
+    margin: 1rem;
+  }
+  .spending {
+    height: 5rem;
+    border-bottom: solid 3px;
+    border-top: solid 3px;
+    margin-bottom: -3px;
+    display: flex;
+    .spending-info {
+      display: flex;
+      justify-content: space-between;
+      width: 70vw;
+    }
+    h6 {
+      margin: 1rem;
+      padding: 0;
+    }
+    #spending-button {
+      display: flex;
+      justify-content: flex-end;
+      width: 30vw;
+
+      button {
+        right: 1rem;
+        margin: 1rem;
+        font-size: .7rem;
+      }
+    }
+  }
+}
+
+.envelope-header > h2 {
+  margin: 1rem;
 }
 
 header {
@@ -119,5 +211,48 @@ header {
     &:hover {
       background-color: $title-color;
     }
+  }
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding-bottom: 8rem;    /* Footer height */
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .4);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 7rem;
+  padding: 2rem;
+  a {
+    margin: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    p {
+      color: white;
+      margin: .6rem;
+    }
+    &:hover {
+      text-shadow: 1px 1px 10px white;
+    }
+  }
+  img {
+    margin-top: 8px;
+    height: 3.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .dollary {
+    font-size: 12vw;
   }
 }
