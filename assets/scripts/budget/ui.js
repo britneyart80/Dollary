@@ -22,6 +22,7 @@ const getCategoriesSuccess = response => {
 }
 
 const openEnvelope = (response) => {
+  console.log(store.categories)
   const openEnvelopeHtml = openEnvelopeTemplate({ envelope: response.envelope })
   const addSpendingHtml = addSpendingTemplate({categories: store.categories})
   $('#content').html(addSpendingHtml)

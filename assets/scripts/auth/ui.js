@@ -12,7 +12,8 @@ const successfulSignUp = response => {
 
 const failedSignUp = () => {
   $('form').trigger('reset')
-  $('#auth-message').text('Sign up failed!')
+  $('#sign-up-modal').modal('hide')
+  $('#auth-message').text("This username is taken or your passwords don't match.")
 }
 
 const successfulSignIn = response => {
@@ -27,7 +28,7 @@ const successfulSignIn = response => {
 const failedSignIn = () => {
   $('form').trigger('reset')
   $('#sign-in-modal').modal('hide')
-  $('#auth-message').text('Sign in failed!')
+  $('#auth-message').text('Sorry, your username or password is incorrect.')
 }
 
 const successfulSignOut = () => {
@@ -43,7 +44,7 @@ const successfulSignOut = () => {
 
 const failedSignOut = () => {
   $('form').trigger('reset')
-  $('#auth-message').text('Sign out failed!')
+  $('#auth-message').text("An error occurred and we couldn't sign you out.")
 }
 
 const successfulPasswordChange = () => {
