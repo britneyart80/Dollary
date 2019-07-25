@@ -249,7 +249,9 @@ main {
       margin: .6rem;
     }
     &:hover {
-      text-shadow: 1px 1px 10px white;
+      p {
+        background: radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+      }
     }
   }
   img {
