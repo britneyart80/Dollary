@@ -24,6 +24,13 @@ body {
   padding-right: 0 !important;
   margin: 0;
 
+  #content {
+    text-align: center;
+    img {
+      margin-top: 2rem;
+    }
+  }
+
   #auth-message {
     margin-top: 2.6rem;
     padding: 1.5rem;
