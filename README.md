@@ -44,6 +44,6 @@ As a user I can see how much of my budget I have left
 As a user I can select a category for my spending.
 
 <p align="center">
-<img src="https://imgur.com/a/i737lvJ" alt="Wireframe Image" height="500">
-<img src="https://imgur.com/a/ZqN9xnZ" alt="Wireframe Image" height="500">
+<img src="https://i.imgur.com/VS5Sg4G.jpg" alt="Wireframe Image" height="500">
+<img src="https://i.imgur.com/nAItzvm.jpg" alt="Wireframe Image" height="500">
 </p>
