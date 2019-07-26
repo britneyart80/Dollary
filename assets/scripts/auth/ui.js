@@ -38,10 +38,9 @@ const successfulSignOut = () => {
   $('.modal-backdrop').hide()
   $('#content').html('<img src="https://media.giphy.com/media/6UUZX9qPA3m7K/giphy.gif">')
   $('#options').empty()
-  $('#auth-message').text('Sign out successful! ')
   const signedOutHtml = signedOutTemplate()
   $('.authentication').html(signedOutHtml)
-  $('#auth-message').append(store.homeMessage)
+  $('#auth-message').html(store.homeMessage)
 }
 
 const failedSignOut = () => {

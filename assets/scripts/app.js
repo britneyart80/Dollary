@@ -9,8 +9,8 @@ const budgetEvents = require('./budget/events.js')
 
 $(() => {
   $('document').ready(budgetEvents.onGetCategories)
-  $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('body').on('submit', '#sign-up', authEvents.onSignUp)
+  $('body').on('submit', '#sign-in', authEvents.onSignIn)
   $('body').on('click', '#sign-out', authEvents.onSignOut)
   $('body').on('submit', '#change-password', authEvents.onChangePassword)
   $('body').on('submit', '#create-envelope', budgetEvents.onCreateEnvelope)
