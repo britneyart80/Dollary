@@ -14,7 +14,7 @@
         <form id="add-spending">
           <div class="inputs">
             <input type="text" placeholder="item bought" name="spending[item]">
-            <input type="number" placeholder="cost" name="spending[cost]">
+            <input type="number" step="any" placeholder="cost" name="spending[cost]">
             <input type="date" placeholder="date of expenditure" name="spending[date]">
             <select name="spending[category_id]">
               {{#each categories.categories as |category|}}

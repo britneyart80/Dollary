@@ -63,7 +63,6 @@ const updateEnvelope = data => {
 
 const addSpending = data => {
   const spending = data.spending
-  console.log(spending.category_id)
   return $.ajax({
     url: config.apiUrl + '/spendings',
     method: 'POST',

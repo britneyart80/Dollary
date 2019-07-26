@@ -18,7 +18,6 @@ const failure = () => {
 
 const getCategoriesSuccess = response => {
   store.categories = response
-  console.log(response)
 }
 
 const openEnvelope = (response) => {
