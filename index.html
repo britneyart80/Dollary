@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dollary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/0W2h2dy.png">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="page-container">
+    <main>
+      <header>
+        <h1>
+          <span id="dollary-title" class="dollary animated">
+            <span>D</span>
+            <span>O</span>
+            <span>L</span>
+            <span>L</span>
+            <span>A</span>
+            <span>R</span>
+            <span>Y</span>
+          </span>
+        </h1>
+        <h4> Your personal dollar diary </h4>
+
+        <div class="authentication">
+
+          <!-- Sign-up -->
+          <button type="button" class="sign-up" data-toggle="modal" data-target="#sign-up-modal"> Sign Up </button>
+
+          <!-- Modal for signing up -->
+          <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="signUpModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signUpModalCenterTitle">Sign Up</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up">
+                    <div class="inputs">
+                      <input type="email" placeholder="Email" name="credentials[email]">
+                      <input type="password" placeholder="Password" name="credentials[password]">
+                      <input type="password" placeholder="Confirm password" name="credentials[password_confirmation]">
+                    </div>
+                    <button class='modal-button'>Sign Up!</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sign-in -->
+          <button type="button" class="sign-in" data-toggle="modal" data-target="#sign-in-modal"> Sign In </button>
+
+          <!-- Modal for signing in -->
+          <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="signInModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="signInModalCenterTitle">Sign In</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in">
+                    <div class="inputs">
+                      <input type="email" placeholder="Email" name="credentials[email]">
+                      <input type="password" placeholder="Password" name="credentials[password]">
+                    </div>
+                    <button class='modal-button'>Sign in</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <p id="auth-message"> Hi! Welcome to <strong> Dollary </strong>, your personal dollar diary with all your budgeting needs. Click 'Sign Up' if you don't already have an account or 'Sign In' to view all your budgeting.</p>
+      <div id="options"></div>
+
+      <div id="content">
+        <img src="https://media.giphy.com/media/6UUZX9qPA3m7K/giphy.gif">
+      </div>
+    </main>
+
+    <footer class="footer">
+        <a href="https://github.com/britneyart80/Dollary" target="_blank">
+          <img src="https://www.pngkey.com/png/full/178-1787508_github-icon-download-at-icons8-white-github-icon.png">
+          <p>GitHub Repo</p>
+        </a>
+        <a href="https://www.linkedin.com/in/britney-chen-08/" target="_blank">
+          <img src="https://i.imgur.com/r1YHULJ.png">
+          <p>LinkedIn</p>
+        </a>
+    </footer>
+  </div>
+
+</body>
+
+</html>
